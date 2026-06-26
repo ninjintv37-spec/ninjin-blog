@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>……</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:"Yu Gothic",sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+#text{
+    font-size:30px;
+    line-height:2;
+    transition:opacity 1s;
+}
+
+small{
+    color:gray;
+}
+</style>
+
+</head>
+<body>
+
+<div id="text"></div>
+
+<script>
+
+const messages=[
+
+"ようやく見つけてくれました。",
+
+"ここまで来られたのは、<br>あなたがよく観察していたからです。",
+
+"でも、<br>これは終わりではありません。",
+
+"これは、始まりです。",
+
+"<h1>第二章</h1><br><h2>Coming Soon...</h2><br><small>また会いましょう。</small>"
+
+];
+
+let i=0;
+
+function next(){
+
+    document.getElementById("text").style.opacity=0;
+
+    setTimeout(()=>{
+
+        document.getElementById("text").innerHTML=messages[i];
+        document.getElementById("text").style.opacity=1;
+
+        i++;
+
+        if(i<messages.length){
+            setTimeout(next,3500);
+        }else{
+
+            // 5秒後に最後のメッセージへ
+            setTimeout(finalMessage,5000);
+
+        }
+
+    },1000);
+
+}
+
+function finalMessage(){
+
+    document.title="見つけた。";
+
+    document.getElementById("text").style.opacity=0;
+
+    setTimeout(()=>{
+
+        document.getElementById("text").innerHTML=
+        "ページを閉じても、<br>私はここにいます。";
+
+        document.getElementById("text").style.opacity=1;
+
+        // さらに6秒後、最後の一文
+        setTimeout(lastLine,6000);
+
+    },1000);
+
+}
+
+function lastLine(){
+
+    document.getElementById("text").style.opacity=0;
+
+    setTimeout(()=>{
+
+        document.getElementById("text").innerHTML=
+        "あなたが見つけたのではありません。<br><br>私が、<br>あなたを見つけたのです。";
+
+        document.getElementById("text").style.opacity=1;
+
+    },1000);
+
+}
+
+setTimeout(next,1500);
+
+</script>
+
+</body>
+</html>

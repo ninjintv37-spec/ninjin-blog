@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>ブログ</h1>
+
+<h2>2026/6/26</h2>
+
+<p>
+こんにちは！
+ブログを始めてみました。
+これから趣味や日常について、ゆるく更新していこうと思います。
+</p>
+
+<p>
+最近は作曲にはまっています。
+まだまだ初心者ですが、少しずつ上達できるよう頑張ります！
+</p>
+
+<hr>
+
+<h2>感想を書いてください！</h2>
+
+<input type="text" id="code" placeholder="感想を書いてください">
+<button onclick="checkPassword()">送信</button>
+
+<p id="message"></p>
+
+
+<p>
+<a href="index.html">トップページへ戻る</a>
+</p>
+<script>
+if(localStorage.getItem("progress")=="hobby"){
+    localStorage.setItem("progress","blog");
+}else{
+    localStorage.setItem("progress","start");
+}
+</script>
+
+<script src="script.js"></script>
+
+<hr>
+
+<p style="text-align:center;">
+©2026 にんじんTV
+</p>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ステータス</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>ステータス</h1>
+
+<p>名前：にんじん</p>
+<p>趣味：作曲</p>
+<p>好きなアーティスト：ピーナッツくん、エミネム</p>
+
+<a href="index.html">トップページへ戻る</a>
+<script>
+if(localStorage.getItem("progress")=="sns"){
+    localStorage.setItem("progress","status");
+}else{
+    localStorage.setItem("progress","start");
+}
+</script>
+<hr>
+
+<p style="text-align:center;">
+©2026 にんじんTV
+</p>
+</body>
+</html>
